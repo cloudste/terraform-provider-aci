@@ -16,6 +16,15 @@ resource "aci_rest" "rest_l3_ext_out2" {
   }
 }
 
+resource "aci_rest" "rest_l3_ext_out3" {
+  path       = "api/node/mo/${aci_tenant.tenant_for_benchmark.id}/out-testext3.json"
+  class_name = "l3extOut"
+
+  content = {
+    "name" = "testext3"
+  }
+}
+
 resource "aci_route_control_profile" "example" {
   parent_dn                  = aci_tenant.tenant_for_benchmark.id
   name                       = "testprof"
@@ -63,6 +72,15 @@ resource "aci_rest" "rest_net_flow_pol2" {
 
   content = {
     "name" = "testpolflow2"
+  }
+}
+
+resource "aci_rest" "rest_net_flow_pol3" {
+  path       = "api/node/mo/${aci_tenant.tenant_for_benchmark.id}/monitorpol-testpolflow3.json"
+  class_name = "netflowMonitorPol"
+
+  content = {
+    "name" = "testpolflow3"
   }
 }
 

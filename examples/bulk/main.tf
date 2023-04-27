@@ -10,8 +10,8 @@ terraform {
 }
 
 provider "aci" {
-  username = ""
-  password = ""
-  url      = ""
+  username = "admin"
+  password = "Redmoon0"
+  url      = "http://10.0.2.214"
   insecure = true
 }
